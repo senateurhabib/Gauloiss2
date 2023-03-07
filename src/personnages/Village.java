@@ -1,25 +1,24 @@
+package personnages;
 public class Village {
 	private String nom;
 	private Chef chef;
-	private int nbVillageois;
+	private int nbVillagois=0;
 	private int nbVillageoisMaximum;
-	private Gaulois [] village = new Gaulois[nbVillageoisMaximum];
-	
+	private Gaulois village [] ;
 
 	public Village(String nom , int nbVillageoisMaximum) {
 		this.nbVillageoisMaximum = nbVillageoisMaximum;
 		this.nom = nom;
+		this.village  = new Gaulois [nbVillageoisMaximum];
 	}
 	
 	public void ajouterHabitant(Gaulois gaulois){
-		village[nbVillageois]= gaulois;	
-		nbVillageois++;
+		village[nbVillagois]= gaulois;	
+		nbVillagois++;
 		}
 	
 	public Gaulois trouverHabitant(int nbr ){
-		return village[nbr];
-		
-		
+		return village[nbr];	
 	}
 	 
 	
@@ -34,7 +33,7 @@ public class Village {
 	
 	public void afficher() {
 		System.out.println("Dans village du " + chef + "vivent les légendaires gaulois");
-		for (int i=0 ; i<nbVillageois ; i++) {
+		for (int i=0 ; i<nbVillagois ; i++) {
 			System.out.println(village[i].getNom());
 		}
 	}
